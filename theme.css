@@ -12,7 +12,7 @@
 	body-background-custom-dropdown "Custom" <<<EOT /*[[body-background-custom]]*\/ EOT;
 }
 
-@advanced text body-background-custom "Body Background" "https://bitbucket.org/flumiie/flumiie.bitbucket.io/raw/bd4299b46455384b57236b67ea9f7fe9860ee235/assets/images/longcat.jpg"
+@advanced text body-background-custom "Body Background" ""
 
 @advanced dropdown video-background "Video Background Mode" {
 	video-background "Default Background*" <<<EOT https://w.wallhaven.cc/full/lm/wallhaven-lmk1gl.jpg EOT;
@@ -36,6 +36,18 @@
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
+    @font-face {
+        font-family: 'Roadgeek 2005 Mittelschrift';
+        src: url(https://bitbucket.org/flumiie/flumiie.bitbucket.io/raw/6be646f76dae4c128f7d932c7bc3a5fec6998860/assets/fonts/Roadgeek%202005%20Mittelschrift.ttf);
+    }
+    @font-face {
+        font-family: 'Bahnschrift Light';
+        src: url('https://bitbucket.org/flumiie/flumiie.bitbucket.io/src/main/assets/fonts/bahnschrift.ttf');
+    }
+    @font-face {
+        font-family: 'Product Sans';
+        src: url(https://bitbucket.org/flumiie/flumiie.bitbucket.io/raw/1e8d1484e5c613389ff141d56850eed4b9849278/assets/fonts/Product%20Sans%20Regular.ttf);
+    }
     :root {
         --primary: rgba(255, 154, 202);
         /* 	--primary: #ff5e5e; */
@@ -46,7 +58,7 @@
         --light-pink: rgb(255, 203, 228);
     }
     *:not(.material-icons) {
-        font-family: 'Bahnschrift Light', 'Product Sans' !important;
+        font-family: 'Roadgeek 2005 Mittelschrift', 'Bahnschrift Light', 'Product Sans' !important;
     }
     /*     h1,h2,h3,h4,h5,h6,p,span,div:not(#video-companion-root) {
         transition: all 0.1s ease;
