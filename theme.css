@@ -19,7 +19,7 @@
 	video-background-custom-dropdown "Custom" <<<EOT /*[[video-background-custom]]*\/ EOT;
 }
 
-@advanced text video-background-custom "Video Background" "https://example.com/image.png"
+@advanced text video-background-custom "Video Background" ""
 
 @advanced text bd-background-filter "Background Hue Rotate" "60deg"
 
