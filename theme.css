@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.02.15.002
+@version        2024.02.27
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -12,9 +12,10 @@
 @updateURL     https://raw.githubusercontent.com/flumiie/Youtube-Pink-Theme/main/theme.css
 
 @advanced dropdown font-face "Site Font" {
-	video-background "Roadgeek 2005 Mittelschrift" <<<EOT Roadgeek 2005 Mittelschrift EOT;
-	video-background "Bahnschrift Light" <<<EOT Bahnschrift Light EOT;
-	video-background "Product Sans" <<<EOT Product sSans EOT;
+	font-face-1 "Roadgeek 2005 Mittelschrift" <<<EOT Roadgeek 2005 Mittelschrift EOT;
+	font-face-2 "Bahnschrift Light" <<<EOT Bahnschrift Light EOT;
+	font-face-3 "Product Sans" <<<EOT Product Sans EOT;
+	font-face-4 "KaoriGel" <<<EOT KaoriGel EOT;
 }
 
 @advanced dropdown body-background "Body Background Mode" {
@@ -58,6 +59,10 @@
         font-family: 'Product Sans';
         src: url(https://bitbucket.org/flumiie/flumiie.bitbucket.io/raw/1e8d1484e5c613389ff141d56850eed4b9849278/assets/fonts/Product%20Sans%20Regular.ttf);
     }
+	@font-face {
+        font-family: KaoriGel;
+        src: url(https://fonts.cdnfonts.com/css/kaorigel);
+    }
     :root {
         --primary: rgba(255, 154, 202);
         /* 	--primary: #ff5e5e; */
@@ -68,7 +73,7 @@
         --light-pink: rgb(255, 203, 228);
     }
     *:not(.material-icons) {
-        font-family: 'Roadgeek 2005 Mittelschrift', 'Bahnschrift Light', 'Product Sans' !important;
+        font-family: /*[[font-face]]*/ !important;
     }
     /*     h1,h2,h3,h4,h5,h6,p,span,div:not(#video-companion-root) {
         transition: all 0.1s ease;
@@ -488,6 +493,10 @@
     yt-formatted-string.style-default-active {
         color: #ffb3d7;
     }
+	/* Dropdown Menu */
+	#label.yt-dropdown-menu:before {
+		padding: 4px;
+	}
     /* Body Background */
     #guide-service {
         display: flex;
