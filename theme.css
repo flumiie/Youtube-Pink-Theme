@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.02.27
+@version        2024.02.27.002
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -61,7 +61,9 @@
     }
 	@font-face {
         font-family: KaoriGel;
-        src: url(https://fonts.cdnfonts.com/css/kaorigel);
+        font-style: normal;
+        font-weight: 500;
+        src: local('KaoriGel'), url('https://fonts.cdnfonts.com/s/18272/KaoriGel.woff') format('woff');
     }
     :root {
         --primary: rgba(255, 154, 202);
