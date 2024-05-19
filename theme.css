@@ -4,12 +4,14 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.03.22
+@version        2024.05.19
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
 @homepageURL   https://github.com/flumiie/Youtube-Pink-Theme
 @updateURL     https://raw.githubusercontent.com/flumiie/Youtube-Pink-Theme/main/theme.css
+
+@var checkbox toggle-rich-sections "Enable YT Shorts" 1
 
 @advanced dropdown font-face "Site Font" {
 	font-face-1 "Roadgeek 2005 Mittelschrift" <<<EOT Roadgeek 2005 Mittelschrift EOT;
@@ -116,6 +118,11 @@
 	#player-ads,
 	ytd-rich-item-renderer:has(ytd-ad-slot-renderer) {
 		display: none !important;
+	}
+	/* Hide Shorts and Featured Videos */
+	ytd-rich-section-renderer {
+		opacity: /*[[toggle-rich-sections]]*/ !important;
+		height: /*[[toggle-rich-sections]]*/ !important
 	}
     /* Caption */
     #caption-window-1 {
@@ -554,7 +561,7 @@
     }
 
     /*     Cookie consent Popup */
-    /*     tp-yt-iron-overlay-backdrop.opened,
+/*     tp-yt-iron-overlay-backdrop.opened,
     ytd-consent-bump-v2-lightbox {
         display: none !important;
     } */
