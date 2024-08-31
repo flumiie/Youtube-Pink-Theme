@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.05.19
+@version        2024.08.31
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -105,9 +105,14 @@
     ytd-video-meta-block {
         text-shadow: 0 0 40px #fff, 0 0 20px #E592BB, 0 0 20px #FF9ACA;
     }
-    #player-theater-container {
-        opacity: /*[[video-player-opacity]]*/
+    #player-theater-container,
+	.video-stream.html5-main-video {
+        opacity: /*[[video-player-opacity]]*/ !important
     }
+	/* SponsorBlock Popup */
+	.sponsorSkipNoticeContainer > div {
+		opacity: 0.6;
+	}
     /* Hide Ads */
     #masthead-ad {
         pointer-events: none;
@@ -125,7 +130,9 @@
 		height: /*[[toggle-rich-sections]]*/ !important
 	}
     /* Caption */
-    #caption-window-1 {
+    .caption-window, #caption-window-1 {
+		left: 50% !important;
+		transform: translateX(-50%);
         background-color: transparent !important;
     }
     .ytp-caption-segment {
@@ -300,6 +307,28 @@
     }
 
     .vc-section.vc-section-video-optimization,
+	/* VidIQ - Video Companion Root */
+	.css-gl84p9 {
+		background: rgba(170, 51, 106, 0.15)
+	}
+	.vidiq-c-bXbWpx-ikoMFdW-css,
+	.vidiq-c-bXbWpx-idkWBM-css,
+	.vidiq-c-bXbWpx-ibHcbfo-css,
+	.vidiq-c-bXbWpx-ibHcbfo-css,
+	.vidiq-c-bXbWpx-ifPGssd-css,
+	.vidiq-c-lesPJm-ilZLsG-css {
+		background: rgba(170, 51, 106 ,1);
+		border: 1px solid rgb(255, 159, 204);;
+	}
+	.vidiq-c-lesPJm-icOoZXu-css,.vidiq-c-lesPJm-igZtaTd-css{
+		background: rgba(170, 51, 106 ,1);
+	}
+	.vidiq-c-bXbWpx-ikoMFdW-css, .vidiq-c-bXbWpx-idkWBM-css, .vidiq-c-bXbWpx-ibHcbfo-css, .vidiq-c-bXbWpx-ibHcbfo-css, .vidiq-c-bXbWpx-ifPGssd-css, .vidiq-c-lesPJm-ilZLsG-css, .vidiq-c-lesPJm-icOoZXu-css, .vidiq-c-lesPJm-igZtaTd-css, .recharts-line path {
+		stroke: rgba(170, 51, 106 ,1);
+	}
+	.vidiq-c-bXbWpx-ihXtPPV-css div > div {
+		background: rgba(170, 51, 106 ,1);
+	}
     /* VidIQ - Video Optimization Checklist */
     .vc-view-comparison-learn-more-button/* VidIQ - Compare Views: Learn more button */
     {
@@ -540,12 +569,12 @@
     }
 
     /* Thumbnail Overlay */
-    /* div#movie_player .ytp-cued-thumbnail-overlay-image {
-        background-size: 15%;
-        background-position-x: 69%;
+    div#movie_player .ytp-cued-thumbnail-overlay-image {
+        background-size: 18%;
+        background-position-x: 27%;
         background-position-y: 57%;
         z-index: 2;
-    } */
+    }
     div#shorts-player .ytp-cued-thumbnail-overlay-image {
         clip-path: polygon(37% 0, 63% 0, 63% 100%, 37% 100%);
         background-size: 80%;
