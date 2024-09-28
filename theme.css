@@ -132,8 +132,6 @@
 	}
     /* Caption */
     .caption-window, #caption-window-1 {
-		left: 50% !important;
-		transform: translateX(-50%);
         background-color: transparent !important;
     }
     .ytp-caption-segment {
