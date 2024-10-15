@@ -4,14 +4,15 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.09.28
+@version        2024.10.15
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
 @homepageURL   https://github.com/flumiie/Youtube-Pink-Theme
 @updateURL     https://raw.githubusercontent.com/flumiie/Youtube-Pink-Theme/main/theme.css
 
-@var checkbox toggle-rich-sections "Enable YT Shorts" 1
+@var checkbox toggle-rich-sections "YT Shorts" 1
+@var checkbox toggle-ambient-mode "Ambient Mode" 1
 
 @advanced dropdown font-face "Site Font" {
 	font-face-1 "Roadgeek 2005 Mittelschrift" <<<EOT Roadgeek 2005 Mittelschrift EOT;
@@ -33,17 +34,11 @@
 }
 
 @advanced text video-background-custom "Video Background" ""
-
 @advanced text bd-background-filter "Background Hue Rotate" "60deg"
-
 @advanced text bd-background-blur "Background Blur" "10px"
-
 @advanced text bd-background-opacity "Background Opacity" "35%"
-
 @advanced text video-background-filter "Video Background Hue Rotate" "45deg"
-
 @advanced text video-background-blur "Video Background Blur" "2px"
-
 @advanced text video-player-opacity "Video Player Opacity" "100%"
 
 ==/UserStyle== */
@@ -130,9 +125,15 @@
 		opacity: /*[[toggle-rich-sections]]*/ !important;
 		height: /*[[toggle-rich-sections]]*/ !important
 	}
+	/* 	Hide Ambient Mode */
+    #cinematic-container {
+        opacity: /*[[toggle-ambient-mode]]*/
+    }
     /* Caption */
     .caption-window, #caption-window-1 {
-        background-color: transparent !important;
+		/* left: 50% !important;
+		transform: translateX(-50%); */
+		background-color: transparent !important;
     }
     .ytp-caption-segment {
         background-color: var(--primary-transparent) !important;
@@ -228,6 +229,9 @@
     }
     yt-tooltip-renderer::before {
         border-color: var(--primary) transparent transparent transparent;
+    }
+    ytd-guide-entry-renderer.vidiq-yt-sidebar-link {
+        display: none;
     }
 
     /* Search box input */
@@ -403,6 +407,10 @@
     }
     .iv-card:hover .iv-card-primary-link {
         color: #ff0076 !important;
+    }
+    /* Paper Dialog Popup */
+    tp-yt-paper-dialog:has(yt-mealbar-promo-renderer) {
+        display: none;
     }
     /* Reels */
     /* ytd-reel-player-header-renderer #subscribe-button {
