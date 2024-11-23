@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.11.13
+@version        2024.11.23
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -423,6 +423,9 @@
 	button.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
 		color: white;
 		background: var(--primary);
+	}
+	ytd-shorts[enable-anchored-panel][enable-persistent-anchored-panel-arrow] .navigation-container.ytd-shorts {
+		background: transparent
 	}
 	/* Youtube Teaser Cards */
 	.ytp-cards-teaser-shown .ytp-cards-teaser .ytp-cards-teaser-box,
