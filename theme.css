@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.11.23
+@version        2024.11.28
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -473,8 +473,10 @@
         background: linear-gradient(0deg, rgba(90, 50, 70, .7) 0%, rgba(90, 50, 70, 0.7) 35%, rgba(0, 0, 0, 0) 100%);
     } */
 	/* Youtube top header */
+	#background.ytd-masthead,
 	ytd-masthead[darker-dark-theme] #background.ytd-masthead {
-		background: rgba(84, 46, 64, .75);
+		background: transparent;
+/* 		background: rgba(84, 46, 64, .75); */
 		filter: blur(3px)
 	}
 	#contentContainer.tp-yt-app-drawer[opened],
@@ -493,6 +495,9 @@
 	ytd-feed-filter-chip-bar-renderer[darker-dark-theme][component-style=FEED_FILTER_CHIP_BAR_STYLE_TYPE_HASHTAG_LANDING_PAGE] #chips-wrapper.ytd-feed-filter-chip-bar-renderer,
 	ytd-feed-filter-chip-bar-renderer[darker-dark-theme][component-style=FEED_FILTER_CHIP_BAR_STYLE_TYPE_CHANNEL_PAGE_GRID] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
 		background-color: rgba(0, 0, 0, 0);
+	}
+	#chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+		background: transparent;
 	}
 	/* Top iron selector */
 	ytd-feed-filter-chip-bar-renderer[darker-dark-theme] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
@@ -549,6 +554,10 @@
 	#avatar {
 		transition: all 0.15s ease;
 	}
+	ytd-rich-item-renderer:hover {
+		background: rgba(92, 0, 44, .5);
+		border-radius: 12px;
+	}
 	ytd-rich-item-renderer:hover #video-title {
 		font-size: 16.25px;
 		color: var(--primary);
@@ -561,6 +570,9 @@
 		width: 38px;
 		height: 38px;
 		margin-left: -1px;
+	}
+	ytd-rich-item-renderer:hover span {
+		color: white;
 	}
 	ytd-compact-video-renderer:hover #video-title {
 		font-size: 14.25px;
