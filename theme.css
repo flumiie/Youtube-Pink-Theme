@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2024.11.28
+@version        2.0
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -472,19 +472,34 @@
     ytd-reel-player-overlay-renderer #overlay.ytd-reel-player-overlay-renderer {
         background: linear-gradient(0deg, rgba(90, 50, 70, .7) 0%, rgba(90, 50, 70, 0.7) 35%, rgba(0, 0, 0, 0) 100%);
     } */
-	/* Youtube top header */
-	#background.ytd-masthead,
-	ytd-masthead[darker-dark-theme] #background.ytd-masthead {
-		background: transparent;
-/* 		background: rgba(84, 46, 64, .75); */
-		filter: blur(3px)
+	/* Youtube top header & Chip Bar & Side Bar */
+	[data-theme="light"] #masthead,
+	[data-theme="light"] ytd-app ytd-guide-renderer.ytd-app,
+	[data-theme="light"] ytd-app #chips-wrapper.ytd-feed-filter-chip-bar-renderer,
+	[data-theme="light"] ytd-app #chips-wrapper.ytd-feed-filter-chip-bar-renderer div,
+	[data-theme="light"] ytd-mini-guide-renderer.ytd-app,
+	[data-theme="light"] ytd-mini-guide-entry-renderer {
+		background: rgba(179, 127, 164, 0.95)
 	}
-	#contentContainer.tp-yt-app-drawer[opened],
-	#guide-content.ytd-app,
-	ytd-app[darker-dark-theme] #guide-content.ytd-app,
-	ytd-app[guide-refresh] ytd-mini-guide-renderer.ytd-app {
-		background: transparent;
+	[data-theme="dark"] #masthead,
+	[data-theme="dark"] ytd-app ytd-guide-renderer.ytd-app,
+	[data-theme="dark"] ytd-app #chips-wrapper.ytd-feed-filter-chip-bar-renderer,
+	[data-theme="dark"] ytd-app #chips-wrapper.ytd-feed-filter-chip-bar-renderer div,
+	[data-theme="dark"] ytd-mini-guide-renderer.ytd-app,
+	[data-theme="dark"] ytd-mini-guide-entry-renderer {
+		background: rgba(60, 7, 44, .95);
+		color: white
 	}
+	ytd-app #left-arrow.ytd-feed-filter-chip-bar-renderer div,
+	ytd-app #right-arrow.ytd-feed-filter-chip-bar-renderer div {
+		background: rgba(0, 0, 0, 0) !important
+	}
+	ytd-app #left-arrow.ytd-feed-filter-chip-bar-renderer::after,
+	ytd-app #right-arrow.ytd-feed-filter-chip-bar-renderer::before {
+		width: 0
+	}
+
+	
 	/* Channel Header & Filter Chip Bar */
 	#channel-container.ytd-c4-tabbed-header-renderer,
 	#tabs-container.ytd-c4-tabbed-header-renderer {
@@ -496,9 +511,7 @@
 	ytd-feed-filter-chip-bar-renderer[darker-dark-theme][component-style=FEED_FILTER_CHIP_BAR_STYLE_TYPE_CHANNEL_PAGE_GRID] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
 		background-color: rgba(0, 0, 0, 0);
 	}
-	#chips-wrapper.ytd-feed-filter-chip-bar-renderer {
-		background: transparent;
-	}
+
 	/* Top iron selector */
 	ytd-feed-filter-chip-bar-renderer[darker-dark-theme] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
 		background: transparent;
