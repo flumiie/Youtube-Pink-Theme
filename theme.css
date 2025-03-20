@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2.0.1
+@version        2.0.2
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -168,7 +168,7 @@
 		width: 100%;
 		height: 100%;
 		background-image: url("/*[[video-background]]*/");
-		transform: scaleX(-1);
+/* 		transform: scaleX(-1); */
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -181,12 +181,12 @@
 		transform: scale(0%);
 	}
 	@media screen and (min-height: 1700px) {
-		.ytp-bezel-text-hide {
+/* 		.ytp-bezel-text-hide {
 			background-size: contain;
 			scale: 2.4;
 			left: 6.9%;
 			top: 10.65%;
-		}
+		} */
 		/*         [aria-label="YouTube Video Player in Fullscreen"] .html5-video-container {
             top: 13.75%;
             left: -20%;
