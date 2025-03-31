@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2.0.2
+@version        2.0.3
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -120,17 +120,27 @@
 		opacity: 0.6;
 	}
 	/* Hide Ads */
+/* 	div.ad-created .html5-video-container {
+		position: absolute !important;
+		right: 21em;
+		top: -10em
+	}
+	div.ad-created .html5-video-container * {
+		width: 20em !important;
+		height: 15em !important;
+	} */
 	[target-id="engagement-panel-ads"],
 	#masthead-ad {
 		pointer-events: none;
-		opacity: 0.2;
+		opacity: 0;
+		height: 0px !important;
 		filter: blur(10px);
-		display: none !important;
 	}
 	#player-ads,
 	.ytd-ad-slot-renderer,
 	ytd-rich-item-renderer:has(ytd-ad-slot-renderer) {
-		display: none !important;
+		opacity: 0;
+		height: 0px !important;
 	}
 	/* Hide Shorts and Featured Videos */
 	ytd-rich-section-renderer,
