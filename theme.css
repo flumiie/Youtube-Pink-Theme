@@ -4,7 +4,7 @@
 @author         flumi
 @namespace      https://github.com/flumiie/YouTube-Pink-Theme
 @description    `It's the long cat but it's in your YouTube walls now`
-@version        2.0.3
+@version        2.0.4
 @license        CC-BY-NC-4.0
 @preprocessor   uso
 @license       CC0 - Public Domain
@@ -106,8 +106,9 @@
 		opacity: /*[[video-player-opacity]]*/
 		!important
 	}
-	/* #media-container-link .video-stream.html5-main-video {} */ /* not yet implemented */
-
+/* 	#media-container-link .video-stream.html5-main-video {
+		
+	} */
 	/* YouTube Grid */
 	ytd-rich-item-renderer {
 		margin-bottom: 12px;
@@ -129,18 +130,14 @@
 		width: 20em !important;
 		height: 15em !important;
 	} */
+	#masthead-ad,
 	[target-id="engagement-panel-ads"],
-	#masthead-ad {
-		pointer-events: none;
+	ytd-rich-item-renderer:has(.ytd-ad-slot-renderer),
+	ytd-player-legacy-desktop-watch-ads-renderer,
+	ytd-ad-slot-renderer {
 		opacity: 0;
 		height: 0px !important;
-		filter: blur(10px);
-	}
-	#player-ads,
-	.ytd-ad-slot-renderer,
-	ytd-rich-item-renderer:has(ytd-ad-slot-renderer) {
-		opacity: 0;
-		height: 0px !important;
+		width: 0px !important;
 	}
 	/* Hide Shorts and Featured Videos */
 	ytd-rich-section-renderer,
@@ -175,8 +172,10 @@
 	.ytp-bezel-text-hide {
 		position: absolute;
 		display: block !important;
-		width: 100%;
-		height: 100%;
+		width: 106%;
+		height: 106%;
+		right: 0px;
+/* 		top: -50px; */
 		background-image: url("/*[[video-background]]*/");
 /* 		transform: scaleX(-1); */
 		background-size: cover;
@@ -211,9 +210,11 @@
 		[aria-label="YouTube Video Player in Fullscreen"]:not(.ended-mode) .html5-video-container video,
 		[aria-label="YouTube Video Player in Fullscreen"]:not(.ended-mode):hover .html5-video-container video {
 			opacity: /*[[video-player-opacity]]*/;
+/* 			scale: 0.66; */
 			scale: 1;
+/* 			top: 200px !important; */
 			top: 1190px !important;
-			left: 0 !important;
+/* 			left: 200px !important; */
 		}
 	}
 	/*     @media screen and (min-width: 2000px) {
@@ -261,6 +262,10 @@
 		display: none;
 	}
 
+	#chips-content div, #chips-content chip-shape {
+		background: transparent !important
+	}
+	
 	/* Search box input */
 	ytd-searchbox,
 	ytd-searchbox #container {
@@ -446,7 +451,7 @@
 	ytd-shorts[is-persistent-panel-active] #shorts-inner-container.ytd-shorts {
 		margin-right: -30em
 	}
-	ytd-shorts[enable-anchored-panel][enable-persistent-anchored-panel-arrow] .navigation-container.ytd-shorts {
+	ytd-shorts[enable-anchored-panel][enable-persistent-anchored-panel-arrow] .navigation-container.ytd-shorts, .navigation-container.ytd-shorts {
 		background: transparent
 	}
 	/* Youtube Teaser Cards */
@@ -508,7 +513,8 @@
 	[data-theme="dark"] ytd-app #chips-wrapper.ytd-feed-filter-chip-bar-renderer,
 	[data-theme="dark"] ytd-app #chips-wrapper.ytd-feed-filter-chip-bar-renderer div,
 	[data-theme="dark"] ytd-mini-guide-renderer.ytd-app,
-	[data-theme="dark"] ytd-mini-guide-entry-renderer {
+	[data-theme="dark"] ytd-mini-guide-entry-renderer,
+	#guide-content.ytd-app {
 		background: rgba(60, 7, 44, .95);
 		color: white
 	}
@@ -521,7 +527,6 @@
 		width: 0
 	}
 
-	
 	/* Channel Header & Filter Chip Bar */
 	#channel-container.ytd-c4-tabbed-header-renderer,
 	#tabs-container.ytd-c4-tabbed-header-renderer {
@@ -532,6 +537,9 @@
 	ytd-feed-filter-chip-bar-renderer[darker-dark-theme][component-style=FEED_FILTER_CHIP_BAR_STYLE_TYPE_HASHTAG_LANDING_PAGE] #chips-wrapper.ytd-feed-filter-chip-bar-renderer,
 	ytd-feed-filter-chip-bar-renderer[darker-dark-theme][component-style=FEED_FILTER_CHIP_BAR_STYLE_TYPE_CHANNEL_PAGE_GRID] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
 		background-color: rgba(0, 0, 0, 0);
+	}
+	#frosted-glass.with-chipbar.ytd-app {
+		height: inherit
 	}
 
 	/* Top iron selector */
